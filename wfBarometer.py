@@ -11,9 +11,6 @@ load_dotenv()
 weatherStation = os.getenv('WEATHER_STATION')
 deviceId = os.getenv('WF_DEVICE_ID')
 tokenId = os.getenv('WF_TOKEN')
-sendAlertRisingURL = "blah"
-sendAlertFallingURL = "blah"
-pressureHist = "pressureHist.dat"
 deviceUrl = "https://swd.weatherflow.com/swd/rest/observations/device/{}?token={}".format(deviceId, tokenId)
 sharpToolsUrl = os.getenv('BARO_URL') 
 #Read the file
