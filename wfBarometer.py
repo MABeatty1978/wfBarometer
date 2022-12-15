@@ -15,7 +15,7 @@ sendAlertRisingURL = "blah"
 sendAlertFallingURL = "blah"
 pressureHist = "pressureHist.dat"
 deviceUrl = "https://swd.weatherflow.com/swd/rest/observations/device/{}?token={}".format(deviceId, tokenId)
-sharpToolsUrl = "https://trigger.sharptools.io/rule/99BTs1ZmbdF40PQHxNYk/key/2f49cde4-59c9-4a45-a9de-e5468533deed/?trend="
+sharpToolsUrl = os.getenv('BARO_URL') 
 #Read the file
 if os.path.isfile(pressureHist):
     with open(aFile, "r") as tempFile:
@@ -37,6 +37,4 @@ else:
     param = "steady"
 
 sharpToolsUrl = sharpToolsUrl + param 
-print(sharpToolsUrl)
 r = requests.post(sharpToolsUrl)
-print(r)
