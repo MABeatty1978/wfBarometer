@@ -13,12 +13,6 @@ deviceId = os.getenv('WF_DEVICE_ID')
 tokenId = os.getenv('WF_TOKEN')
 deviceUrl = "https://swd.weatherflow.com/swd/rest/observations/device/{}?token={}".format(deviceId, tokenId)
 sharpToolsUrl = os.getenv('BARO_URL') 
-#Read the file
-if os.path.isfile(pressureHist):
-    with open(aFile, "r") as tempFile:
-        Press = [line.rstrip('\n') for line in tempFile]
-else: 
-    Press = []
 
 #Get the json from the weather station
 d = requests.get(deviceUrl)
